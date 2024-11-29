@@ -30,6 +30,11 @@ android {
             // In real app, this would use its own release keystore
             signingConfig = signingConfigs.getByName("debug")
         }
+        create("benchmark") {
+            initWith(buildTypes.getByName("release"))
+            matchingFallbacks += listOf("release")
+            isDebuggable = false
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -49,6 +54,7 @@ android {
 
 dependencies {
 
+    "baselineProfile"(project(":app:baselineprofile"))
     val composeBom = platform(libs.compose.bom)
     implementation(composeBom)
 

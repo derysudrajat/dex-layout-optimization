@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "DexLayoutOps"
 include(":app")
- 
+include(":app:benchmark")
+include(":app:baselineprofile")
