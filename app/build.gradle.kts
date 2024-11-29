@@ -21,8 +21,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            isShrinkResources = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -50,6 +50,10 @@ android {
         compose = true
         viewBinding = true
     }
+}
+
+baselineProfile {
+    dexLayoutOptimization = true
 }
 
 dependencies {

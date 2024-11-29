@@ -19,6 +19,13 @@ class StartupProfileGenerator {
 
     @Test
     fun profileGenerator() {
-        // do something
+        rule.collect(
+            packageName = "id.derysudrajat.dexlayoutops",
+            maxIterations = 15,
+            stableIterations = 3,
+            includeInStartupProfile = true
+        ) {
+            startActivityAndWait()
+        }
     }
 }
